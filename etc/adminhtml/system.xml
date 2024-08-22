@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="ferreira" translate="label" sortOrder="1">
+            <label>RCFerreira</label>
+        </tab>
+        <section id="ferreira_abandoned_cart" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>RCFerreira Abandoned Cart</label>
+            <tab>ferreira</tab>
+            <resource>RCFerreira_AbandonedCart::config_abandoned_cart</resource>
+
+            <group id="config_abandoned_cart_hour" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="0">
+                <label>Parameters</label>
+                <field id="abandoned_cart_hour" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Inform Hour</label>
+                    <config_path>ferreira_abandonedcart/general/abandoned_cart_hour</config_path>
+                </field>
+                <field id="abandoned_cart_minute" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Inform Minute</label>
+                    <config_path>ferreira_abandonedcart/general/abandoned_cart_minute</config_path>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
