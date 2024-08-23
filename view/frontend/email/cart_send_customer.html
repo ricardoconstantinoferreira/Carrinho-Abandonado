@@ -1,0 +1,13 @@
+<!--@subject Shipment label details for Order # {{var order_id}} @-->
+
+{{template config_path="design/email/header_template"}}
+
+<div class="abandoned-email-template">
+    <div class="abandoned-email-container">
+        <p class="abandoned-title">{{trans "Dear"}} <strong>{{var customer_name|escape}}</strong>, </p>
+        <p> Please find the shipment label to use when returning your items.</p>
+        <p><a style="color: #0A246A" href="{{var shipping_label}}">{{trans "Shipping Label"}}</a> </p>
+    </div>
+</div>
+
+{{template config_path="design/email/footer_template"}}

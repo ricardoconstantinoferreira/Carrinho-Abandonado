@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Email:etc/email_templates.xsd">
+
+    <template id="abandoned_cart_label_template"
+              label="Email to customer that abandoned cart"
+              module="RCFerreira_AbandonedCart"
+              file="cart_send_customer.html"
+              type="html"
+              area="frontend"
+              />
+</config>
