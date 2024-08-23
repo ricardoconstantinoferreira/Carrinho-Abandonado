@@ -10,7 +10,8 @@ interface AbandonedInterface
     /**
      * @api
      *
-     * @return bool
+     * @param int $customerId
+     * @return void
      */
-    public function check(): bool;
+    public function check(int $customerId): void;
 }
