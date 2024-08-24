@@ -1,12 +1,12 @@
-<!--@subject Shipment label details for Order # {{var order_id}} @-->
+<!--@subject {{trans "Abandoned Cart Notification"}} @-->
 
 {{template config_path="design/email/header_template"}}
 
 <div class="abandoned-email-template">
     <div class="abandoned-email-container">
         <p class="abandoned-title">{{trans "Dear"}} <strong>{{var customer_name|escape}}</strong>, </p>
-        <p> Please find the shipment label to use when returning your items.</p>
-        <p><a style="color: #0A246A" href="{{var shipping_label}}">{{trans "Shipping Label"}}</a> </p>
+        <p>{{trans "Please, return in your cart to finish your buy."}}</p>
+        <p><a style="color: #0A246A" href="{{var customer_login}}">{{trans "Login"}}</a> </p>
     </div>
 </div>
 

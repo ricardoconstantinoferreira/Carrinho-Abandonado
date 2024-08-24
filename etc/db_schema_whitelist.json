@@ -1,0 +1,13 @@
+{
+    "rcferreira_abandoned_cart": {
+        "column": {
+            "entity_id": true,
+            "quote_id": true,
+            "notification": true
+        },
+        "constraint": {
+            "PRIMARY": true,
+            "RCFERREIRA_ABANDONED_CART_QUOTE_ID_QUOTE_ENTITY_ID": true
+        }
+    }
+}
