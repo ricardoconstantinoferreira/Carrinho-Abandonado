@@ -50,18 +50,18 @@ class AbandonedCart extends AbstractModel implements AbandonedCartInterface
     }
 
     /**
-     * @param bool $notification
+     * @param int $notification
      * @return AbandonedCartInterface
      */
-    public function setNotification(bool $notification): AbandonedCartInterface
+    public function setNotification(int $notification): AbandonedCartInterface
     {
         return $this->setData(self::NOTIFICATION, $notification);
     }
 
     /**
-     * @return bool
+     * @return int
      */
-    public function getNotification(): bool
+    public function getNotification(): int
     {
         return (bool) $this->getData(self::NOTIFICATION);
     }

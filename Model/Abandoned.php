@@ -30,12 +30,12 @@ class Abandoned implements AbandonedInterface
      */
     public function check(int $customerId): void
     {
-
         try {
             $customer = $this->customerRepositoryInterface->getById($customerId);
 
             if ($this->parametersAbandoned->execute($customerId)) {
                 $this->send->sendMail($customer);
+                $this->parametersAbandoned->setInvalidNotification($customerId);
             }
         } catch (\Exception $e) {
             throw new LocalizedException(__($e->getMessage()));

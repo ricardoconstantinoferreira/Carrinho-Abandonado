@@ -43,7 +43,7 @@ class AddPlugin
 
             if (empty($this->abandonedCartData->getDataAbandonedCart($quoteId))) {
                 $this->abandonedCart->setQuote($quoteId);
-                $this->abandonedCart->setNotification(true);
+                $this->abandonedCart->setNotification(1);
 
                 $this->abandonedCartRepository->save($this->abandonedCart);
             }

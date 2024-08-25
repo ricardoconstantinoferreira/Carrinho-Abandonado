@@ -11,9 +11,11 @@ class QuoteAbandoned
 
     /**
      * @param Collection $collection
+     * @param AbandonedCartData $abandonedCartData
      */
     public function __construct(
-        private Collection $collection
+        private Collection $collection,
+        private AbandonedCartData $abandonedCartData
     ) {}
 
     /**
@@ -29,5 +31,29 @@ class QuoteAbandoned
             ->where("main_table.customer_id = {$customerId}");
 
         return $collection->query()->fetch();
+    }
+
+    public function getCustomers(): array
+    {
+        $collection = $this->collection->getSelect()
+            ->where("main_table.customer_id in (select entity_id from customer_entity)")
+            ->group("customer_id");
+
+        return $collection->query()->fetchAll();
+    }
+
+    /**
+     * @param int $quoteId
+     * @return bool
+     */
+    public function isNotification(int $quoteId): int
+    {
+        $data = $this->abandonedCartData->getDataAbandonedCart($quoteId);
+
+        if (!empty($data)) {
+            return (int) current($data)['notification'];
+        }
+
+        return 0;
     }
 }

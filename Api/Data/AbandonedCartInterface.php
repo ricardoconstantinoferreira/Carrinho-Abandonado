@@ -38,13 +38,13 @@ interface AbandonedCartInterface
     public function getQuote(): int;
 
     /**
-     * @param bool $notification
+     * @param int $notification
      * @return AbandonedCartInterface
      */
-    public function setNotification(bool $notification): AbandonedCartInterface;
+    public function setNotification(int $notification): AbandonedCartInterface;
 
     /**
-     * @return bool
+     * @return int
      */
-    public function getNotification(): bool;
+    public function getNotification(): int;
 }
