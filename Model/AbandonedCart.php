@@ -63,6 +63,6 @@ class AbandonedCart extends AbstractModel implements AbandonedCartInterface
      */
     public function getNotification(): int
     {
-        return (bool) $this->getData(self::NOTIFICATION);
+        return (int) $this->getData(self::NOTIFICATION);
     }
 }
