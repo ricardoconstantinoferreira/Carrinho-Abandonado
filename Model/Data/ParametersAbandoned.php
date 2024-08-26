@@ -68,6 +68,5 @@ class ParametersAbandoned
 
             $this->abandonedCartRepository->save($this->abandonedCart);
         }
-
     }
 }
