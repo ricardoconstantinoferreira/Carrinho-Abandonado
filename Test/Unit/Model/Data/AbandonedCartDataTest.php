@@ -12,12 +12,24 @@ use Magento\Framework\Api\SearchCriteria;
 
 class AbandonedCartDataTest extends TestCase
 {
-    private  $searchCriteriaBuilder;
+    /**
+     * @var SearchCriteriaBuilder|(SearchCriteriaBuilder&\PHPUnit\Framework\MockObject\MockObject)|\PHPUnit\Framework\MockObject\MockObject
+     */
+    private  SearchCriteriaBuilder $searchCriteriaBuilder;
 
-    private  $abandonedCartRepository;
+    /**
+     * @var AbandonedCartRepositoryInterface|\PHPUnit\Framework\MockObject\MockObject|(AbandonedCartRepositoryInterface&\PHPUnit\Framework\MockObject\MockObject)
+     */
+    private  AbandonedCartRepositoryInterface $abandonedCartRepository;
 
-    private $abandonedCartData;
+    /**
+     * @var AbandonedCartData
+     */
+    private AbandonedCartData $abandonedCartData;
 
+    /**
+     * @return void
+     */
     public function setUp(): void
     {
         $this->searchCriteriaBuilder = $this->getMockBuilder(SearchCriteriaBuilder::class)
@@ -34,6 +46,9 @@ class AbandonedCartDataTest extends TestCase
         );
     }
 
+    /**
+     * @return void
+     */
     public function testGetDataAbandonedCart(): void
     {
         $quoteId = 123;
@@ -60,5 +75,4 @@ class AbandonedCartDataTest extends TestCase
         $result = $this->abandonedCartData->getDataAbandonedCart($quoteId);
         self::assertSame($searchResults, $result);
     }
-
 }

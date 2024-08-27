@@ -34,9 +34,10 @@ class ParametersAbandoned
     public function execute(int $customerId): bool
     {
         $quote = $this->quoteAbandoned->getQuote($customerId);
-        $notification = $this->quoteAbandoned->isNotification((int) $quote['entity_id']);
 
         if (!$quote) return false;
+
+        $notification = $this->quoteAbandoned->isNotification((int) $quote['entity_id']);
 
         $created = $quote['created_at'];
 
