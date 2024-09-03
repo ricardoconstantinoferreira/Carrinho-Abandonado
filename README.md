@@ -2,11 +2,13 @@ The README.md file content is generated automatically, see [Magento module READM
 
 # RCFerreira_AbandonedCart module
 
-
-
 ## Installation details
 
-For information about a module installation in Magento 2, see [Enable or disable modules](https://devdocs.magento.com/guides/v2.4/install-gde/install/cli/install-cli-subcommands-enable.html).
+For installation this module is simple, only inform that command.
+
+<b>composer require "rcferreira/module-abandoned-cart"</b><br />
+<b>php bin/magento setup:upgrade</b><br />
+<b>php bin/magento setup:di:compile</b><br />
 
 ## Extensibility
 
@@ -14,19 +16,16 @@ Extension developers can interact with the RCFerreira_AbandonedCart module. For 
 
 [The Magento dependency injection mechanism](https://devdocs.magento.com/guides/v2.4/extension-dev-guide/depend-inj.html) enables you to override the functionality of the RCFerreira_AbandonedCart module.
 
-### Layouts
+### Configuration
 
-The module introduces layout handles in the `view/adminhtml/layout` directory.
+In Admin, go to Stores -> Configuration -> RCFERREIRA -> RCFerreira Abandoned Cart.<br />
+There is a form with four fields.<br />
+<b>Inform Name</b> is user name email sender<br />
+<b>Inform Email</b> is user email sender</b>
+<b>Inform Hour</b> is in that moment the plataform send a email to customer after his add products in the cart, if you don't want send after 1 hour you can leave it empty<br />
+<b>Inform Minute</b> is in that moment the plataform send a email in minutes<br />
 
-For more information about a layout in Magento 2, see the [Layout documentation](https://devdocs.magento.com/guides/v2.4/frontend-dev-guide/layouts/layout-overview.html).
+### How it works
 
-### UI components
-
-You can extend product and category updates using the UI components located in the `view/adminhtml/ui_component` directory.
-
-For information about a UI component in Magento 2, see [Overview of UI components](https://devdocs.magento.com/guides/v2.4/ui_comp_guide/bk-ui_comps.html).
-
-## Additional information
-
-For information about significant changes in patch releases, see [Release information](https://devdocs.magento.com/guides/v2.4/release-notes/bk-release-notes.html).
-# Carrinho-Abandonado
+It's module use cron to send email to customer for notification his that there is a abandoned cart.<br />
+That email there is a link that redirect customer to site again.

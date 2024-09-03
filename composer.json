@@ -1,17 +1,29 @@
 {
-  "name": "r-c-ferreira/module-abandoned-cart",
-  "version": "1.0.0",
-  "description": "N/A",
-  "type": "magento2-module",
-  "require": {
-    "magento/framework": "*"
-  },
-  "autoload": {
-    "files": [
-      "registration.php"
+    "name": "rcferreira/module-abandoned-cart",
+    "version": "1.0.1",
+    "description": "Module used to work with abandoned cart in magento",
+    "authors": [
+        {
+            "name": "Ricardo Constantino Ferreira",
+            "email": "ricardoconstantino30@gmail.com",
+            "role": "Developer"
+        }
     ],
+    "type": "magento2-module",
+    "homepage": "https://github.com/ricardoconstantinoferreira/Carrinho-Abandonado",
+    "license": [
+        "OSL-3.0",
+        "AFL-3.0"
+    ],
+    "require": {
+        "magento/framework": "*"
+    },
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
     "psr-4": {
-      "RCFerreira\\AbandonedCart\\": ""
+        "RCFerreira\\AbandonedCart\\": ""
     }
   }
 }
